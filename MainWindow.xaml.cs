@@ -25,5 +25,10 @@ namespace BookStore
             InitializeComponent();
             MainFrame.Source = new Uri("Pages/_pageStart.xaml", UriKind.RelativeOrAbsolute);
         }
+
+        private void Label_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            MainFrame.Source = new Uri("Pages/_pageRegister.xaml", UriKind.RelativeOrAbsolute);
+        }
     }
 }
