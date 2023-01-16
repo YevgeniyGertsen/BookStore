@@ -6,6 +6,13 @@
         xmlns:local="clr-namespace:BookStore"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1200">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resourses/Style.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"></ColumnDefinition>
@@ -20,15 +27,16 @@
             <RowDefinition Height="10"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black"
-                BorderThickness="1,1,1,1"
-                CornerRadius="10" Background="Black">
+        <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource BorderStyle}">
             <WrapPanel VerticalAlignment="Center" >
-                <Label Content="Home" Foreground="White" FontSize="16" Margin="0,0,10,0" Cursor="Hand"/>
-                <Label Content="Register" Foreground="White" FontSize="16" Margin="0,0,10,0" Cursor="Hand" MouseDoubleClick="Label_MouseDoubleClick"/>
-                <Label Content="Contact" Foreground="White" FontSize="16" Margin="0,0,10,0" Cursor="Hand"/>
-                <Label Content="About Us" Foreground="White" FontSize="16" Margin="0,0,10,0" Cursor="Hand"/>
-                <Label Content="View Cart" Foreground="White" FontSize="16" Margin="0,0,10,0" Cursor="Hand"/>
+                <Label Content="Home" Style="{StaticResource BorderLableStyle}"
+                       MouseDoubleClick="Label_MouseDoubleClick_2"/>
+                <Label Content="Register" Style="{StaticResource BorderLableStyle}" 
+                       MouseDoubleClick="Label_MouseDoubleClick"/>
+                <Label Content="Contact" Style="{StaticResource BorderLableStyle}"
+                       MouseDoubleClick="Label_MouseDoubleClick_1"/>
+                <Label Content="About Us" Style="{StaticResource BorderLableStyle}"/>
+                <Label Content="View Cart" Style="{StaticResource BorderLableStyle}"/>
             </WrapPanel>
         </Border>
         <Border Grid.Column="1" Grid.Row="3" CornerRadius="10">
@@ -42,8 +50,8 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
-                <Border CornerRadius="10" Background="Black">
-                    <Label Content="Login" Foreground="White"></Label>
+                <Border Style="{StaticResource BorderStyle}">
+                    <Label Content="Login" Style="{StaticResource BorderLableStyle}"></Label>
                 </Border>
                 <Label Content="UserName:"></Label>
                 <TextBox x:Name="tbxUserName"></TextBox>
@@ -53,8 +61,8 @@
                     <Button Content="Login"></Button>
                 </WrapPanel>
                 <StackPanel Margin="0 0 0 20">
-                <Border CornerRadius="10" Background="Black">
-                    <Label Content="Search" Foreground="White" Margin="0 0 0 0"></Label>
+                    <Border Style="{StaticResource BorderStyle}">
+                        <Label Content="Search" Style="{StaticResource BorderLableStyle}"></Label>
                 </Border>
                     <WrapPanel Margin="0 10 0 0">
                     <TextBox x:Name="tbxSearch" Margin="5 0 0 0" Width="105" ></TextBox>

@@ -7,7 +7,13 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="_pageRegister">
-
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resourses/PageRegisterStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
     <Grid x:Name="gdRegisterForm">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"></ColumnDefinition>
@@ -24,44 +30,45 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Label Content="Welcome To Registration." FontSize="20" Grid.Column="0" 
-               Grid.Row="0" Grid.ColumnSpan="2" VerticalContentAlignment="Center" 
-               HorizontalAlignment="Center" Foreground="Green"></Label>
-        <Label Content="First Name:" Grid.Column="0" Grid.Row="1" FontSize="12"></Label>
-        <Label Content="Last Name:" Grid.Column="0" Grid.Row="2" FontSize="12"></Label>
-        <Label Content="Password:" Grid.Column="0" Grid.Row="3" FontSize="12"></Label>
-        <Label Content="Gender:" Grid.Column="0" Grid.Row="4" FontSize="12"></Label>
-        <Label Content="E-mail Address:" Grid.Column="0" Grid.Row="5" FontSize="12"></Label>
-        <Label Content="Contact No.:" Grid.Column="0" Grid.Row="6" FontSize="12"></Label>
-        <Label Content="City:" Grid.Column="0" Grid.Row="7" FontSize="12"></Label>
-        
-        
-        <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+
+        <Label Content="Welcome To Registration." 
+               Style="{StaticResource H1Label}" 
+               Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"/>
+
+        <Label Content="First Name:" Grid.Column="0" Grid.Row="1"/>
+        <Label Content="Last Name:" Grid.Column="0" Grid.Row="2"/>
+        <Label Content="Password:" Grid.Column="0" Grid.Row="3"/>
+        <Label Content="Gender:" Grid.Column="0" Grid.Row="4"/>
+        <Label Content="E-mail Address:" Grid.Column="0" Grid.Row="5"/>
+        <Label Content="Contact No.:" Grid.Column="0" Grid.Row="6"/>
+        <Label Content="City:" Grid.Column="0" Grid.Row="7"/>
+
+        <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" 
+                    Orientation="Horizontal">
             <CheckBox Margin="0, 10, 0, 0"></CheckBox>
-            <Label Content="I Accept Term and Condition" FontSize="12"></Label>
+            <Label Content="I Accept Term and Condition"></Label>
         </StackPanel>
 
-        <TextBox Grid.Row="1" Grid.Column="1" x:Name="tbxFirstName" FontSize="12" Height="25" Width="150"
-                 Text="{Binding Path=FirstName}"></TextBox>
-        <TextBox Grid.Row="2" Grid.Column="1" x:Name="tbxLastName" FontSize="12" Height="25" Width="150"
-                 Text="{Binding Path=LastName}"></TextBox>
-        <PasswordBox Grid.Row="3" Grid.Column="1" x:Name="pbPassword" FontSize="12" Height="25" Width="150"
-                     ></PasswordBox>
-        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center">
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=FirstName}"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=LastName}"/>
+        <PasswordBox Grid.Row="3" Grid.Column="1"/>
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1"
+                    VerticalAlignment="Center">
             <RadioButton Margin="0 7 0 0" x:Name="rbMale"></RadioButton>
             <Label Content="Male"></Label>
             <RadioButton Margin="0 7 0 0" x:Name="rbFemale"></RadioButton>
             <Label Content="Femail"></Label>
         </StackPanel>
-        <TextBox Grid.Row="5" Grid.Column="1" x:Name="tbxEmail" FontSize="12" Height="25" Width="150"
-                 Text="{Binding Path=Email}"></TextBox>
-        <TextBox Grid.Row="6" Grid.Column="1" x:Name="tbxContact" FontSize="12" Height="25" Width="150"
-                 Text="{Binding Path=Contact_Number}"></TextBox>
+
+        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=Email}"/>
+        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Path=Contact_Number}"/>
+
         <ComboBox Grid.Row="7" Grid.Column="1" x:Name="cbCity" 
-                  FontSize="12" Height="25" Width="150"
                   DisplayMemberPath="Name"
                   SelectedValuePath="CityId"
-                  SelectedValue="{Binding Path=CityId}"></ComboBox>
+                  SelectedValue="{Binding Path=CityId}"/>
+        
         <Button Content="Registration" Grid.Column="1" Grid.Row="8" Margin="400 25 10 0" Name="btnRegister" Click="btnRegister_Click"></Button>
 
     </Grid>

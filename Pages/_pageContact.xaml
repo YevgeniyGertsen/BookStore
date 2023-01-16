@@ -1,0 +1,30 @@
+﻿<Page x:Class="BookStore.Pages._pageContact"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BookStore.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="_pageContact">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resourses/pageContactStyle.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <StackPanel Orientation="Vertical">
+        <Label Content="Contacts" 
+               HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"/>
+
+        <Label Content="United States" Style="{StaticResource BoldText}"/>
+        <Label Content="1-800-275-2273"/>
+        <Label Content="Connect with American Sign Language support" Margin="0 0 0 15"/>
+        <Label Content="Education customers"/>
+        <Label Content="Support: 1-800-800-2775"/>
+        <Label Content="Sales: 1-800-780-5009"/>
+        
+    </StackPanel>
+    
+</Page>
